@@ -6,8 +6,9 @@ class Role extends AbstractMigration
 {
     public function change()
     {
-        $this->table('role', ['primary_key' => 'id', 'signed' => false])
+        $this->table('role', ['primary_key' => 'id', 'signed' => false, 'identity' => true])
             ->addColumn('name', 'string', ['length' => 255, 'null' => false])
+            ->addColumn('shortname', 'string', ['length' => 255, 'null' => false])
             ->addColumn('type', 'enum', [
                 'default' => 'GROUP',
                 'values'  => [
@@ -15,7 +16,7 @@ class Role extends AbstractMigration
                 ],
                 'comment' => 'Tipo da permissão'
             ])
-            ->addIndex(['name'], ['unique' => true, 'name' => 'IDX_role_name'])
+            ->addIndex('shortname', ['unique' => true, 'name' => 'IDX_role_shortname'])
             ->create();
     }
 }

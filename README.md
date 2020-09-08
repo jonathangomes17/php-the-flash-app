@@ -85,14 +85,31 @@ npm run build
 
 ### Migration
 
+Create a new migration
 ```bash
 docker exec theflashapp_php vendor/bin/phinx create TestMigration
 ```
 
+Runing all migrations
+```bash
+docker exec theflashapp_php vendor/bin/phinx migrate -e production
+```
+
 ### Seed
 
+Create a new seeder
 ```bash
 docker exec theflashapp_php vendor/bin/phinx seed:create TestSeed
+```
+
+Runing all seeders
+```bash
+docker exec theflashapp_php vendor/bin/phinx seed:run -e production
+```
+
+Runing initial application
+```bash
+docker exec theflashapp_php vendor/bin/phinx seed:run -s User -s Role -s UserRole -s Action -s RoleAction -e production 
 ```
 
 ## Contributors
