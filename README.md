@@ -92,7 +92,7 @@ docker exec theflashapp_php vendor/bin/phinx create TestMigration
 ### Seed
 
 ```bash
-php vendor/bin/phinx seed:create TestSeed
+docker exec theflashapp_php vendor/bin/phinx seed:create TestSeed
 ```
 
 ## Contributors
