@@ -24,7 +24,8 @@
     "swiftmailer/swiftmailer": "^6.2",
     "symfony/filesystem": "^5.1",
     "sentry/sdk": "2.1.0",
-    "symfony/yaml": "^5.1"
+    "symfony/yaml": "^5.1",
+    "fzaninotto/faker": "^1.9"
   },
   "require-dev": {
   },
