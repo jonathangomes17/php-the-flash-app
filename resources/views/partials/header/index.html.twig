@@ -1,0 +1,24 @@
+<div class="theflashapp-header">
+    <div class="flex flex__items--center">
+        <a class="theflashapp-header__brand" href="/">
+            <img src="/public/assets/images/logo.jpg" alt="Logo" class="theflashapp-header__logo">
+            The Flash App
+        </a>
+
+        {% include "partials/menu/horizontal.html.twig" %}
+    </div>
+
+    <div class="relative">
+        <div class="flex flex__items--center theflashapp-header__profile js__dropdown">
+            <span class="theflashapp-header__profile-photo points--none"> TF </span>
+            <span class="arrow arrow--default arrow--down arrow--smaller points--none"></span>
+        </div>
+
+        <div class="dropdown dropdown--right">
+            <span class="dropdown__item">
+                <i class="fa fa-sign-out margin__small--right"></i>
+                <a href="/sair" class="typography"> Sair </a>
+            </span>
+        </div>
+    </div>
+</div>

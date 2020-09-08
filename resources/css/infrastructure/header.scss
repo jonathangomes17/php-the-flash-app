@@ -1,0 +1,39 @@
+.theflashapp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 .6rem 0 .6rem;
+  background-color: white;
+
+  &__brand {
+    color: #666666;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 30px;
+    margin-right: .5rem;
+  }
+
+  &__profile {
+    height: 35px;
+    width: 60px;
+    cursor: pointer;
+
+    &-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 35px;
+      font-weight: 600;
+      background: #ededed;
+      border-radius: 50%;
+      color: $primary-color;
+      margin-right: 0.25rem;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// Colocar apenas o que é Master Class aqui
+// Para evitar o uso excessivo de CSS que não será utilizado entre as páginas
+// Assim você obterá uma alta performance em sua página
+// Boa sorte meu amigo :)
+
+@import "infrastructure/variables";
+
+@import "infrastructure/scaffolding";
+
+@import "infrastructure/margins";
+
+@import "infrastructure/flex";
+
+@import "infrastructure/sidebar";
+
+@import 'infrastructure/header';
+
+@import 'infrastructure/breadcrumb';
+
+@import 'infrastructure/arrow';
+
+@import 'infrastructure/dropdown';
+
+@import 'infrastructure/skeleton';
+
+.relative {
+  position: relative;
+}
+
+.points {
+  &--none {
+    pointer-events: none;
+  }
+
+  &--all {
+    pointer-events: all;
+  }
+}
+
+.hidden {
+  display: none;
+}

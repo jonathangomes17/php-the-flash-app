@@ -1,0 +1,50 @@
+{% apply spaceless %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="robots" content="noindex">
+
+    <title>{% block title %}{% endblock %} | The Flash App </title>
+
+    <link rel="icon" type="shortcut icon" href="{{ '/public/assets/images/favicon.ico' }}" />
+
+    <link rel="stylesheet" href="/public/assets/base.css" />
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {% if page.slug %}
+        <link href="/public/assets/pages/{{ page.slug }}/{{ page.slug }}.css" media="all" rel="stylesheet" type="text/css">
+    {% endif %}
+
+    <script defer type="text/javascript" src="/public/assets/base.js"></script>
+
+    {% if page.slug %}
+        <script defer type="text/javascript" src="/public/assets/pages/{{ page.slug }}/{{ page.slug }}.js"></script>
+    {% endif %}
+</head>
+
+<body>
+    {% include "partials/header/index.html.twig" %}
+
+    <div class="theflashapp__container">
+        <div class="theflashapp__main">
+            {% include "partials/content-hero/index.html.twig" %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endapply %}

@@ -1,0 +1,33 @@
+.margin {
+  &__1 {
+    &--right {
+      margin-right: 1rem;
+    }
+
+    &--left {
+      margin-left: 1rem;
+    }
+
+    &--top {
+      margin-top: 1rem;
+    }
+  }
+
+  &__small {
+    &--left {
+      margin-left: 0.5rem;
+    }
+
+    &--right {
+      margin-right: 0.5rem;
+    }
+
+    &--top {
+      margin-top: .5rem;
+    }
+
+    &--bottom {
+      margin-bottom: .5rem;
+    }
+  }
+}

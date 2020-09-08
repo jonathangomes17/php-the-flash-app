@@ -1,0 +1,33 @@
+{% apply spaceless %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="robots" content="noindex">
+
+    <title>{% block title %}{% endblock %} | The Flash App</title>
+
+    <link rel="icon" type="shortcut icon" href="/public/assets/images/favicon.png">
+
+    {% if page.slug %}
+        <link href="/public/assets/pages/{{ page.slug }}/{{ page.slug }}.css" media="all" rel="stylesheet" type="text/css">
+        <script async type="text/javascript" src="/public/assets/pages/{{ page.slug }}/{{ page.slug }}.js"></script>
+    {% endif %}
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
+
+{% endapply %}

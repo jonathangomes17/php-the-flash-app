@@ -1,0 +1,30 @@
+.theflashapp__navbar {
+  display: flex;
+  flex-flow: row wrap;
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: .5rem;
+    color: #666;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 500;
+    border-radius: .1rem;
+
+    &--sub {
+      padding-left: 2rem;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &--active {
+      border-bottom: solid 3px $primary-color;
+      border-radius: 0;
+    }
+  }
+}

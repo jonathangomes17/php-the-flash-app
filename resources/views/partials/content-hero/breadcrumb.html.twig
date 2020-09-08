@@ -1,0 +1,28 @@
+
+{% if breadcrumb %}
+
+  <div class="theflashapp-breadcrumb">
+    {% for item in breadcrumb %}
+
+      <span>
+
+        <span class="theflashapp-breadcrumb__item">
+          {% if item.link %}
+            <a href="{{ item.link }}" class="theflashapp-breadcrumb__link"> {{ item.description }} </a>
+          {% else %}
+            {{ item.description }}
+          {% endif %}
+        </span>
+
+        <span class="theflashapp-breadcrumb__separator"> / </span>
+
+      </span>
+
+    {% endfor %}
+  </div>
+
+{% else %}
+    <div class="theflashapp-breadcrumb">
+        <div style="width: 400px"><div class="skeleton"></div></div>
+    </div>
+{% endif %}

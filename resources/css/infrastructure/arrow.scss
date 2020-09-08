@@ -1,0 +1,29 @@
+.arrow {
+  border: solid $tertiary-color;
+  border-width: 0 2px 2px 0;
+  height: 8px;
+  width: 8px;
+  transition: 0.2s;
+
+  &--default {
+    border: solid $default-color;
+    border-width: 0 2px 2px 0;
+  }
+
+  &--up {
+    transform: rotate(135deg)
+  }
+
+  &--down {
+    transform: rotate(45deg)
+  }
+
+  &--left {
+    transform: rotate(135deg)
+  }
+
+  &--smaller {
+    height: 6px;
+    width: 6px;
+  }
+}
