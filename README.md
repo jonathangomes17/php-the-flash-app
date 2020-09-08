@@ -1,5 +1,5 @@
 # The Flash App
-> Aplicação (Quase que um framework :)) responsável por gerar o básico necessário para desenvolver uma aplicação Web
+> Aplicação responsável por gerar o básico necessário para desenvolver uma aplicação Web
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/maintainability)](https://codeclimate.com/github/jonathangomes17/php-the-flash-app/maintainability)
 <a href="https://codeclimate.com/github/jonathangomes17/php-the-flash-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/test_coverage" /></a>
@@ -18,6 +18,9 @@ __Table of Contents__
     * [Setup](#setup)
         * [Docker](#docker)
         * [Front-End](#front-end)
+    * [Phinx](#phinx)
+        * [Migration](#migration)
+        * [Seed](#seed)
     * [Contributors](#contributors)
 <!--te-->
 
@@ -76,6 +79,20 @@ npm run watch
 Build dos assets
 ```bash
 npm run build
+```
+
+## Phinx
+
+### Migration
+
+```bash
+docker exec theflashapp_php vendor/bin/phinx create TestMigration
+```
+
+### Seed
+
+```bash
+php vendor/bin/phinx seed:create TestSeed
 ```
 
 ## Contributors
