@@ -23,7 +23,8 @@
     "illuminate/database": "^7.11",
     "swiftmailer/swiftmailer": "^6.2",
     "symfony/filesystem": "^5.1",
-    "sentry/sdk": "2.1.0"
+    "sentry/sdk": "2.1.0",
+    "symfony/yaml": "^5.1"
   },
   "require-dev": {
   },
@@ -44,7 +45,8 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "composer dump-autoload -o"
+      "composer dump-autoload -o",
+      "vendor/bin/phinx migrate -e production"
     ]
   }
 }
