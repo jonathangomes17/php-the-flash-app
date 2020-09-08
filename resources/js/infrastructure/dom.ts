@@ -29,7 +29,7 @@ export function each(element: NodeList, callback: CallableFunction) {
 
 export function addClass(currentEl, cssClass) {
   if (Symbol.iterator in Object(currentEl)) {
-    Array.prototype.slice.call(currentEl).forEach((el) => el.classList.remove(cssClass))
+    Array.prototype.slice.call(currentEl).forEach((el) => el.classList.add(cssClass))
     return
   }
 
