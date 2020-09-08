@@ -4,17 +4,17 @@
 __Table of Contents__
 =====================
 
-<img align="right" srcset="https://i.imgur.com/qJmbQPo.jpeg, https://i.imgur.com/qJmbQPo.jpeg 1.5x, https://i.imgur.com/qJmbQPo.jpeg 2x" src="https://i.imgur.com/qJmbQPo.jpeg" width="200px;" />
+<img align="right" srcset="https://i.imgur.com/qJmbQPo.jpeg, https://i.imgur.com/qJmbQPo.jpeg 1.5x, https://i.imgur.com/qJmbQPo.jpeg 2x" src="https://i.imgur.com/qJmbQPo.jpeg" width="150px;" />
 
 <!--ts-->
 * [TheFlashApp](#the-flash-app)
     * [Table of contents](#table-of-contents)
-    * [Objetive](#objective)
+    * [Objective](#objective)
     * [Requirements](#requirements)
     * [Resources](#resources)
     * [Setup](#setup)
-        * [Docker](#setup-docker)
-        * [Front-End](#setup-front-end)
+        * [Docker](#docker)
+        * [Front-End](#front-end)
     * [Contributors](#contributors)
 <!--te-->
 
