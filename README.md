@@ -1,6 +1,9 @@
 # The Flash App
 > Aplicação (Quase que um framework :)) responsável por gerar o básico necessário para desenvolver uma aplicação Web
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/maintainability)](https://codeclimate.com/github/jonathangomes17/php-the-flash-app/maintainability)
+<a href="https://codeclimate.com/github/jonathangomes17/php-the-flash-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/test_coverage" /></a>
+
 __Table of Contents__
 =====================
 
