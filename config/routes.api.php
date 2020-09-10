@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Modules\TheFlashApp\Handler\Test\EventsHandler;
 use FastRoute\RouteCollector;
 use App\Infrastructure\Router;
 use App\Modules\TheFlashApp\Handler\PrivateHandler;
@@ -21,6 +22,11 @@ return function (FastRoute\RouteCollector $r): void {
             // Api's privadas (Necessário enviar o Bearer Token gerado pelo JWT)
 
             $r->get('/private', PrivateHandler::class);
+
+
+            $r->addGroup('/test', function (RouteCollector $r) {
+                $r->get('/events', [EventsHandler::class, Router::$IS_PUBLIC]);
+            });
         });
     });
 };

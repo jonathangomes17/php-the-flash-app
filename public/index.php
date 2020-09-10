@@ -14,7 +14,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 (new Dotenv)->overload(__DIR__ . '/../.env');
 
 if ($_ENV['APP_ENV'] !== 'development') {
-    Sentry\init(['dsn' => $_ENV['SENTRY_DSN'],'environment' => $_ENV['APP_ENV']]);
+    Sentry\init(['dsn' => $_ENV['SENTRY_DSN'], 'environment' => $_ENV['APP_ENV']]);
 }
 
 error_reporting(E_ALL && ~E_DEPRECATED);
@@ -44,7 +44,7 @@ try {
 
         if ($events = EventDispatcherAbstract::getEvents()) {
             $subscribers = require '../config/subscribers.php';
-            $dispatcher = new EventDispatcher;
+            $dispatcher  = new EventDispatcher;
 
             array_map(function ($subscriber) use ($dispatcher) {
                 $dispatcher->addSubscriber(new $subscriber);
@@ -60,13 +60,11 @@ try {
                 }
             }
         }
-
     } else {
         echo $response->render();
     }
 
     exit(0);
-
 } catch (Throwable $e) {
     if ($_ENV['APP_ENV'] !== 'development') {
         Sentry\captureException($e);

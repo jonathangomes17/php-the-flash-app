@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Infrastructure;
 
+use Symfony\Contracts\EventDispatcher\Event;
+
 /**
  * Class EventDispatcher
  *
@@ -11,13 +13,16 @@ namespace App\Infrastructure;
  */
 abstract class EventDispatcher
 {
+    /**
+     * @var array $dispatch
+     */
     protected static $dispatch = [];
 
     /**
-     * @param        $instance
+     * @param Event  $instance
      * @param string $eventName
      */
-    public static function pipe($instance, string $eventName)
+    public static function pipe(Event $instance, string $eventName)
     {
         self::$dispatch[$eventName] = $instance;
     }

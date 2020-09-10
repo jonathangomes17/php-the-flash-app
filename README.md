@@ -1,5 +1,5 @@
 # The Flash App
-> Aplicação responsável por gerar o básico necessário para desenvolver uma aplicação Web
+> Application responsible for generating the basics necessary to develop a Web application
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/maintainability)](https://codeclimate.com/github/jonathangomes17/php-the-flash-app/maintainability)
 <a href="https://codeclimate.com/github/jonathangomes17/php-the-flash-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ab4f2041a09a3434a3a2/test_coverage" /></a>
@@ -21,14 +21,15 @@ __Table of Contents__
     * [Phinx](#phinx)
         * [Migration](#migration)
         * [Seed](#seed)
+    * [Events](#events)
     * [Contributors](#contributors)
 <!--te-->
 
 ## Objective
 
-- Ter alta performance
-- Boilerplate com master class
-- Arquitetura MVC + DDD focado em aplicações pequenas, com custo bem baixo
+- High performance
+- Boilerplate with master class application
+- MVC + DDD architecture focused on small applications, with very low cost
 
 ## Requirements
 
@@ -36,21 +37,20 @@ __Table of Contents__
 * Node 13.*
 * Composer
 
-
 ## Resources
 
 - PHP
   
-  - Fast Route (Controllers e API)
-  - JWT (Segurança na sessão do usuário)
-  - Event Dispatcher (Trabalhando com Events e Subscribers)
-  - Symfony/Console (Rotinas do cron)
-  - Phinx (Comandos no BD)
-  - Swift Mailer (Disparando e-mails)
-  - Sentry (Monitoração de erros)
-  - DotEnv (Variáveis de ambiente)
+  - Fast Route (Controllers and Handlers)
+  - JWT (Bigger Security of session user)
+  - Event Dispatcher (Events and Subscribers)
+  - Symfony/Console (Routines of cron)
+  - Phinx (Commands of manipulation database)
+  - Swift Mailer (Mail dispatcher)
+  - Sentry (Monitoring errors)
+  - DotEnv (Environments)
   - Illuminate/Database (ORM)
-  - Twig Template (Camada view)
+  - Twig Template (View layer)
 
 - TypeScript
 - Webpack
@@ -71,12 +71,12 @@ sh .bin/exec.sh
 
 ### Front-End
 
-Executando alterações CSS + JS 
+Executing changes css and js 
 ```bash
 npm run watch
 ```
 
-Build dos assets
+Build assets
 ```bash
 npm run build
 ```
@@ -111,6 +111,13 @@ Runing initial application
 ```bash
 docker exec theflashapp_php vendor/bin/phinx seed:run -s User -s Role -s UserRole -s Action -s RoleAction -e production 
 ```
+
+### Events
+> Triggers that run in the background without affecting the user experience
+
+- Enable the `fastcgi_finish_request` feature for a better api experience
+- If not enabled, all events will be triggered at run time
+- Example with three events `localhost:4000/api/v1/test/events`
 
 ## Contributors
 
