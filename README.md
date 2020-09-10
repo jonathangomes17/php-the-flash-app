@@ -145,6 +145,7 @@ docker exec theflashapp_php vendor/bin/phinx seed:run -s User -s Role -s UserRol
     "retrieve_token": null
   }
   ```
+- After the response json, update your `.env` file with the new information, the ideal would be `JWT_RETRIEVE_TOKEN` or even` JWT_KEY`, but ensure that no user is accessing it at this time, but in the event it is logged out
   
 #### Session token
   
