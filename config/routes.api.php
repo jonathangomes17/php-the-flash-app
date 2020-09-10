@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Modules\TheFlashApp\Handler\Test\EventsHandler;
+use App\Modules\TheFlashApp\Handler\Util\TokenHandler;
 use FastRoute\RouteCollector;
 use App\Infrastructure\Router;
 use App\Modules\TheFlashApp\Handler\PrivateHandler;
@@ -26,6 +27,10 @@ return function (FastRoute\RouteCollector $r): void {
 
             $r->addGroup('/test', function (RouteCollector $r) {
                 $r->get('/events', [EventsHandler::class, Router::$IS_PUBLIC]);
+            });
+
+            $r->addGroup('/util', function (RouteCollector $r) {
+                $r->get('/token', [TokenHandler::class, Router::$IS_PUBLIC]);
             });
         });
     });

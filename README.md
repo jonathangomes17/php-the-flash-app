@@ -22,6 +22,9 @@ __Table of Contents__
         * [Migration](#migration)
         * [Seed](#seed)
     * [Events](#events)
+    * [Token](#token)
+        * [Retrieve token](#retrieve-token)
+        * [Session token](#session-token)
     * [Contributors](#contributors)
 <!--te-->
 
@@ -118,6 +121,34 @@ docker exec theflashapp_php vendor/bin/phinx seed:run -s User -s Role -s UserRol
 - Enable the `fastcgi_finish_request` feature for a better api experience
 - If not enabled, all events will be triggered at run time
 - Example with three events `localhost:4000/api/v1/test/events`
+
+### Token
+> Manages access to your application
+
+#### Retrieve token
+
+- Util route for generate token per environment `localhost:4000/api/v1/util/token`
+  - **iss** - Issuer app
+  - **exp** - Expiration time token (the value informed above is to never expire). When not informed or null search in the environment `JWT_EXPIRATION` 
+  - **secret_key** - The unique signature of your token for added security. When not informed or null search in the environment `JWT_KEY`
+  - **algorithm** - Generate token with base in algorithm. When not informed or null search in the environment `JWT_ALGORITHM`
+  - **retrieve_token** - Is used to ensure end-to-end between applications, in case leave it empty.
+  
+  Example:
+  
+  ```json
+  {
+    "iss": "The Flash App",
+    "exp": 317125598072,
+    "secret_key": null,
+    "algorithm": null,
+    "retrieve_token": null
+  }
+  ```
+  
+#### Session token
+  
+It is generated in the `api/v1/auth` route based on the environment variables` JWT_RETRIEVE_TOKEN`, `JWT_EXPIRATION`,` JWT_KEY` and `JWT_ALGORITHM`
 
 ## Contributors
 

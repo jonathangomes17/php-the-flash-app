@@ -17,30 +17,28 @@ use Throwable;
 final class AuthMiddleware
 {
     /**
-     * @param int|null  $id
-     *
-     * @param bool|null $isAdmin
-     * @param int|null  $role
-     * @param int|null  $time
+     * @param int|null    $id
+     * @param int|null    $role
+     * @param int|null    $time
+     * @param string|null $iss
      *
      * @return string
      */
     public static function generate(
         ?int $id = null,
-        ?bool $isAdmin = false,
         ?int $role = null,
-        ?int $time = null
+        ?int $time = null,
+        ?string $iss = 'The Flash App'
     ): string {
 
         return JWT::encode(
             [
-                "iat"           => time(),
-                "iss"           => "My App",
-                "refresh_token" => $_ENV['JWT_REFRESH_TOKEN'],
-                "exp"           => $time ?? time() + intval($_ENV['JWT_EXPIRATION']),
-                "id"            => $id,
-                "isAdmin"       => $isAdmin,
-                "role"          => $role
+                "iat"            => time(),
+                "iss"            => $iss,
+                "retrieve_token" => $_ENV['JWT_RETRIEVE_TOKEN'],
+                "exp"            => $time ?? time() + intval($_ENV['JWT_EXPIRATION']),
+                "id"             => $id,
+                "role"           => $role
             ],
             $_ENV['JWT_KEY'],
             $_ENV['JWT_ALGORITHM']
@@ -62,7 +60,7 @@ final class AuthMiddleware
         try {
             $decoded = AuthMiddleware::decoded($token);
 
-            if ($decoded->refresh_token !== $_ENV['JWT_REFRESH_TOKEN']) {
+            if ($decoded->refresh_token !== $_ENV['JWT_RETRIEVE_TOKEN']) {
                 throw new Exception('invalid_token', 401);
             }
 
